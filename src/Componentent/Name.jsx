@@ -68,7 +68,7 @@ const Fullname = () => {
                 </div>
                 <button type="submit">Submit</button> {/* Set button type to submit */}
             </form>
-            {(fname.length > 0 && lname.length > 0) && <p>{fullname}</p>}
+            {fullname.length>0&&(<p>FullName: {fullname}</p>)}
         </>
     );
 };
