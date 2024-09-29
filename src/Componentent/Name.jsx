@@ -37,11 +37,8 @@ const Fullname = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent form submission
-        if(!fname || !lname)
-        {
-            return;
-        }
-        setFullname(`${fname} ${lname}`); // Concatenate with space
+        if(lname && fname)
+            setFullname(`${fname} ${lname}`); // Concatenate with space
     };
 
     return (
@@ -51,6 +48,7 @@ const Fullname = () => {
                 <div>
                     <label htmlFor="firstname">First Name:</label>
                     <input
+                    required
                         type="text"
                         name="firstname"
                         id="firstname"
@@ -60,6 +58,7 @@ const Fullname = () => {
                 <div>
                     <label htmlFor="lastname">Last Name:</label>
                     <input
+                    required
                         type="text"
                         name="lastname"
                         id="lastname"
@@ -68,7 +67,7 @@ const Fullname = () => {
                 </div>
                 <button type="submit">Submit</button> {/* Set button type to submit */}
             </form>
-            {fullname.length>0&&(<p>FullName: {fullname}</p>)}
+            {fullname.length>0&&(<p>Full Name: {fullname}</p>)}
         </>
     );
 };
